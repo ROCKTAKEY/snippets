@@ -1,0 +1,16 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: YSFH Science Literacy I
+# key: sli
+# --
+* <<<$0
+${1:** 事前課題
+}** SINE
+*** 事後課題
+
+*** キーワード
+
+*** 探求課題
+
+*** 質問・感想
+
+*** 疑問点と調査結果   

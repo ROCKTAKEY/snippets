@@ -1,0 +1,42 @@
+# key: ac
+# name: atcoder
+# --
+#include <cstdio>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+#include <algorithm>
+#include <utility>
+#include <numeric>
+#include <deque>
+#include <stack>
+#include <queue>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <cmath>
+#include <limits>
+
+#define for0(i, n)    for (int i = 0  ; i <  (n); ++i)
+#define for1n(i, n)   for (int i = 1  ; i <= (n); ++i)
+#define for1(i, n)    for (int i = 1  ; i <  (n); ++i)
+#define forn(i, n)    for (int i = 0  ; i <= (n); ++i)
+#define forx(i, n, x) for (int i = (x); i <  (n); ++i)
+
+using namespace std;
+
+typedef long long ll;
+typedef priority_queue<ll> pq;
+typedef priority_queue<ll,vector<ll> ,greater<ll>> pql;
+typedef stack<ll> stk;
+typedef queue<ll> qu;
+
+
+int main(void){
+
+    $0
+
+    return 0;
+}

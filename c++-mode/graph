@@ -1,0 +1,89 @@
+# key: graph
+# name: graph
+# --
+struct arc{
+    int to;
+    int cost;
+};
+
+template<typename T>
+struct node{
+    T value;
+    vector<arc> arcs;
+    node(T v) : value(v){}
+
+    node& operator= (T const& a){
+        value = a;
+        return *this;
+    }
+    operator T() const {
+        return value;
+    }
+
+};
+
+template<typename T>
+class graph{
+protected:
+    vector<node<T>> nodes;
+
+public:
+
+    graph(int N, T value) : nodes(N, value){};
+
+    void addArc(int from, int to, int cost){
+        nodes[from].arcs.push_back({to, cost});
+    }
+    void addEdge(int a, int b, int cost){
+        addArc(a, b, cost);
+        addArc(b, a, cost);
+    }
+    node<T>& operator[](int index) const {
+        return nodes[index];
+    }
+};
+
+class bellmanford : public graph<int>{
+    int N;
+    int changed;
+
+    void r(unordered_set<int> froms, int termination){
+        bool c = false;
+        unordered_set<int> f;
+        for (auto& from : froms){
+            for (auto& i : nodes[from].arcs) {
+                if (nodes[i.to].value > i.cost + nodes[from].value) {
+                    nodes[i.to].value = i.cost + nodes[from].value;
+                    f.insert(i.to);
+                    c = true;
+                }
+            }
+        }
+        // Terminated
+        if (!c) return;
+
+        // Negative loop?
+        if(!termination){
+            changed = c;
+            return;
+        }
+        // continue
+        r(move(f), termination-1);
+    }
+
+public:
+
+    bellmanford(int N): graph::graph(N, std::numeric_limits<int>::max()),
+                        N(N), changed(false){}
+
+    bool run(int start){
+        nodes[start].value = 0;
+        r({start}, N-1);
+        return changed;
+    }
+
+    int const& operator[] (int index){
+        return nodes[index].value;
+    }
+
+};
