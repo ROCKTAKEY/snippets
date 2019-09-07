@@ -18,23 +18,28 @@
 #include <unordered_set>
 #include <cmath>
 #include <limits>
+#include <cassert>
 
-#define for0(i, n)    for (int i = 0  ; i <  (n); ++i)
-#define for1n(i, n)   for (int i = 1  ; i <= (n); ++i)
-#define for1(i, n)    for (int i = 1  ; i <  (n); ++i)
-#define forn(i, n)    for (int i = 0  ; i <= (n); ++i)
-#define forx(i, n, x) for (int i = (x); i <  (n); ++i)
+#define for0(i, N)    for (int i = 0  ; i <  (N); ++i)
+#define for1n(i, N)   for (int i = 1  ; i <= (N); ++i)
+#define for1(i, N)    for (int i = 1  ; i <  (N); ++i)
+#define forn(i, N)    for (int i = 0  ; i <= (N); ++i)
+#define forx(i, N, x) for (int i = (x); i <  (N); ++i)
+#define forl(i, N, x, a) for (int i = (x), a = 0; a < (N);  \
+                              i = (i + 1) % (N), ++a)
 
 using namespace std;
 
 typedef long long ll;
+typedef long double ld;
 typedef priority_queue<ll> pq;
-typedef priority_queue<ll,vector<ll> ,greater<ll>> pql;
+typedef priority_queue<ll,vector<ll>, greater<ll>> pql;
 typedef stack<ll> stk;
 typedef queue<ll> qu;
 
 
 int main(void){
+    cin.tie(0); ios::sync_with_stdio(false);
 
     $0
 

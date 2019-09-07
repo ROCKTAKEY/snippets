@@ -38,9 +38,17 @@ public:
         addArc(a, b, cost);
         addArc(b, a, cost);
     }
-    node<T>& operator[](int index) const {
+    node<T>& operator[](int index) {
         return nodes[index];
     }
+
+    auto begin() { return nodes.begin(); }
+    auto end()   { return nodes.end();   }
+
+    auto const& getInstance(){
+        return nodes;
+    }
+
 };
 
 class bellmanford : public graph<int>{
