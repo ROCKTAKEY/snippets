@@ -36,6 +36,11 @@ typedef priority_queue<ll> pq;
 typedef priority_queue<ll,vector<ll>, greater<ll>> pql;
 typedef stack<ll> stk;
 typedef queue<ll> qu;
+typedef pair<ll, ll> pll;
+typedef map<ll, ll> mll;
+typedef unordered_map<ll, ll> umll;
+typedef set<ll> sll;
+typedef unordered_set<ll> usll;
 
 
 int main(void){

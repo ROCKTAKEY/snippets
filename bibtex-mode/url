@@ -1,0 +1,15 @@
+# key: url
+# name: url
+# --
+@misc{ ${title},
+  author       = {${author}},
+  title        = {${title}},
+  howpublished = {\url{${url}}},
+  year         = {${year}},
+  month        = {${month}},
+  day          = {${day}},
+  note         = {${note}},
+  annotate     = {${annotate}}
+}
+
+$0

@@ -32,7 +32,8 @@ public:
     graph(int N, T value) : nodes(N, value){};
 
     void addArc(int from, int to, int cost){
-        nodes[from].arcs.push_back({to, cost});
+        assert(0 <= from && from <= n - 1 && 0 <= to && to <= n - 1);
+        nodes[from].arcs.push_back({to,cost});
     }
     void addEdge(int a, int b, int cost){
         addArc(a, b, cost);

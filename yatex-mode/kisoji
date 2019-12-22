@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: kisoji
+# key: kisoji
+# --
+\documentclass[a4paper, dvipdfmx]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{mine}
+\usepackage{kisoji}
+
+\begin{document}
+
+
+ \bibliographystyle{kisoji}
+ \bibliography{mine}
+
+\end{document}
