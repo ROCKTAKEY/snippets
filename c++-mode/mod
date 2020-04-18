@@ -8,7 +8,7 @@ class llm{
     long long l;
     static std::unordered_map<long long, llm> inv;
 
-public:
+  public:
     llm(long long m = 0LL) : l((m % mod >= 0)?(m % mod):(m % mod + mod)) {};
 
     llm inverse() const {
@@ -21,8 +21,8 @@ public:
     }
 
     llm pow(long long i) const {
-        if (i < 0)  return inverse().pow(i);
-        return pow(i, 1, l);
+        if (i < 0)  return inverse().pow(-i);
+        return pow(l, i, 1);
     }
 
     static llm pow (long long a, long long i, long long base = 1) {
@@ -36,30 +36,30 @@ public:
     llm operator>> (long long i) const {return pow(-i);}
 
     llm operator+ (llm m)       const {return llm(l + m.l);}
-    llm operator+ (int m)       const {return llm(l + (m % mod));}
+    llm operator+ (signed m)       const {return llm(l + (m % mod));}
     llm operator+ (long m)      const {return llm(l + (m % mod));}
     llm operator+ (long long m) const {return llm(l + (m % mod));}
 
     llm operator- (llm m)       const {return llm(l - m.l);}
-    llm operator- (int m)       const {return llm(l - (m % mod));}
+    llm operator- (signed m)       const {return llm(l - (m % mod));}
     llm operator- (long m)      const {return llm(l - (m % mod));}
     llm operator- (long long m) const {return llm(l - (m % mod));}
 
     llm operator* (llm m)       const {return llm(l * m.l);}
-    llm operator* (int m)       const {return llm(l * (m % mod));}
+    llm operator* (signed m)       const {return llm(l * (m % mod));}
     llm operator* (long m)      const {return llm(l * (m % mod));}
     llm operator* (long long m) const {return llm(l * (m % mod));}
 
     llm operator/ (llm m)       const {return llm((*this) * m.inverse() % mod);}
-    llm operator/ (int m)       const {return llm(l * llm(m).inverse()) % mod;}
+    llm operator/ (signed m)       const {return llm(l * llm(m).inverse()) % mod;}
     llm operator/ (long m)      const {return llm(l * llm(m).inverse()) % mod;}
     llm operator/ (long long m) const {return llm(l * llm(m).inverse()) % mod;}
 
     long long operator++ (void) {return l = (l + 1) % mod;}
-    long long operator++ (int)  {long long tmp = l; ++(*this); return tmp;}
+    long long operator++ (signed)  {long long tmp = l; ++(*this); return tmp;}
 
     long long operator-- (void) {return l = (l - 1) % mod;}
-    long long operator-- (int)  {long long tmp = l; --(*this); return tmp;}
+    long long operator-- (signed)  {long long tmp = l; --(*this); return tmp;}
 
     llm operator+ (void) const {return llm( l);}
     llm operator- (void) const {return llm(-l);}
@@ -69,7 +69,13 @@ public:
     template<typename T> llm operator*= (T m) {return *this = *this * m;}
     template<typename T> llm operator/= (T m) {return *this = *this / m;}
 
-    operator long long() {return l;}
+    llm combination(ll n, ll r, llm base = 1){ // O(r)
+    assert(n >= r);
+    if (r == 0) return base;
+    return combination(n, r - 1, base * llm(n - r + 1) * llm(r).inverse());
+    }
+
+    operator long long() const {return l;}
 
     friend std::istream &operator>>(std::istream &stream, llm &m);
 
