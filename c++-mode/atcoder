@@ -35,6 +35,28 @@
                               i = (i + 1) % (N), ++a)
 #define int long long
 
+long double constexpr pi = 3.141592653589793;
+
+template<class T>
+constexpr T sigma1(T i, T n){
+    return (n - i + 1) * (i + n) / 2;
+}
+
+template<class T>
+constexpr T sigma2(T i, T n){
+    return (i == 1 ? n * (n + 1) * (2 * n + 1) / 6 :
+            sigma2(1, n) - sigma2(1, i - 1));
+}
+
+template<class T>
+constexpr T sigma3(T i, T n){
+    if (i == 1) {
+        auto temp = sigma1(i, n);
+        return temp * temp;
+    }
+    return sigma2(1, n) - sigma2(1, i - 1);
+}
+
 template<size_t i>
 std::bitset<i> operator++(std::bitset<i> b, signed){
     static_assert(i <= 64, "Cannot cast 64bit int.");
@@ -68,6 +90,7 @@ long long constexpr inf = std::numeric_limits<long long>::max();
 using namespace std;
 
 typedef long long ll;
+typedef unsigned long long ull;
 typedef long double ld;
 typedef priority_queue<ll> pq;
 typedef priority_queue<ll,vector<ll>, greater<ll>> pql;

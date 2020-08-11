@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: template
+# key: template
+# --
+\documentclass[a4paper, dvipdfmx]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{mine}
+
+\begin{document}
+ $0
+
+ \bibliographystyle{junsrt}
+ \bibliography{mine}
+
+\end{document}

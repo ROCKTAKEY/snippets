@@ -4,11 +4,9 @@
 @misc{ ${title},
   author       = {${author}},
   title        = {${title}},
-  howpublished = {\url{${url}}},
-  year         = {${year}},
-  month        = {${month}},
-  day          = {${day}},
-  note         = {${note}},
+  ${year         = \{${year}\},
+}  howpublished = {\url{${url}}},
+  note         = {(accessed `(format-time-string "%Y/%m/%d")`)},
   annotate     = {${annotate}}
 }
 
