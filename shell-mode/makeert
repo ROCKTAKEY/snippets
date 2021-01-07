@@ -2,4 +2,4 @@
 # name: makeert
 # key: makeert
 # --
-make ert CASK="c:/mpf/Python27/python %USERPROFILE%/.cask/bin/cask"
+make ert CASK="c:/Python27/python %USERPROFILE%/.cask/bin/cask"
