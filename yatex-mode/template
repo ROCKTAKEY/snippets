@@ -2,15 +2,26 @@
 # name: template
 # key: template
 # --
-\documentclass[a4paper, dvipdfmx]{jsarticle}
-\usepackage[dvipdfmx]{graphicx}
+\RequirePackage{plautopatch}
+\documentclass[a4paper, platex, dvipdfmx]{jlreq}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
 
-\usepackage{mine}
+\title{}
+\author{}
 
 \begin{document}
- $0
+\maketitle
 
- \bibliographystyle{junsrt}
- \bibliography{mine}
+$0
 
+\bibliographystyle{junsrt}
+\bibliography{mine}
 \end{document}
