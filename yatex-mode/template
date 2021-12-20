@@ -5,8 +5,12 @@
 \RequirePackage{plautopatch}
 \documentclass[a4paper, platex, dvipdfmx]{jlreq}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxjahyper}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{booktabs}
 \usepackage{bm}
 \usepackage{physics}
 \usepackage{mathtools}
