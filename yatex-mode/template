@@ -5,6 +5,7 @@
 \RequirePackage{plautopatch}
 \documentclass[a4paper, platex, dvipdfmx]{jlreq}
 \usepackage{graphicx}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 \usepackage{hyperref}
 \usepackage{pxjahyper}
 \usepackage{amsmath}
